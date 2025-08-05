@@ -4,22 +4,21 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext } from "react";
 import { Link } from "react-router";
-import Loading from "../Loading/Loading";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { CategoriesContext } from "../../Context/Categories.context";
 import HomeCategoriesSkeleton from "../Skeleton/HomeCategoriesSkeleton";
+import useCategories from "../../Hooks/useCategories";
 
 export default function HomeCategories() {
-  const { isLoading, categories } = useContext(CategoriesContext);
+  const { isLoading, categories } = useCategories();
 
-  if (isLoading) return <HomeCategoriesSkeleton/>;
+  if (isLoading) return <HomeCategoriesSkeleton />;
 
   return (
     <section className="px-2 py-4 relative">

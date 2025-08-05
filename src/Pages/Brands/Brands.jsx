@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { BrandsContext } from "../../Context/Brands.context";
 import Loading from "../../Components/Loading/Loading";
+import useBrands from "../../Hooks/UseBrands";
 
 export default function Brands() {
-  const { isLoading, brands, isError, error } = useContext(BrandsContext);
+  const { isLoading, brands, isError, error } = useBrands();
 
   if (isLoading) return <Loading />;
   if (isError)

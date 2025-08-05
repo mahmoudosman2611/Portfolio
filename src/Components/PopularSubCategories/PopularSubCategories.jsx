@@ -1,6 +1,3 @@
-import React, { useContext } from "react";
-import { SubCategoriesContext } from "../../Context/Subcategories.context";
-import Loading from "../Loading/Loading";
 import { Link } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,12 +11,12 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { PopularSubCategoriesSkeleton } from "../Skeleton/PopularSubCategoriesSkeleton";
+import useSubcategories from "../../Hooks/useSubcategories";
 
 export default function PopularSubCategories() {
-  const { isLoading, subcategories, isError, error } =
-    useContext(SubCategoriesContext);
+  const { isLoading, subcategories, isError, error } = useSubcategories();
 
-  if (isLoading) return <PopularSubCategoriesSkeleton/>;
+  if (isLoading) return <PopularSubCategoriesSkeleton />;
   if (isError)
     return (
       <p className="text-red-500 text-center">{error?.message || "حدث خطأ"}</p>

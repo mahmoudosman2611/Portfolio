@@ -1,14 +1,14 @@
 import { Link } from "react-router";
 import Card from "../Card/Card";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-import Loading from "../Loading/Loading";
 import { calcTimeLeft } from "../../Utils/CounterDown";
-import { productsContext } from "../../Context/Products.context";
+
 import HomeDealsSkeleton from "../Skeleton/HomeDealsSkeleton";
+import useProducts from "../../Hooks/useProducts";
 
 export default function HomeDeals() {
-  const { isLoading, products, isError, error } = useContext(productsContext);
+  const { isLoading, products, isError, error } = useProducts();
 
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
@@ -27,7 +27,7 @@ export default function HomeDeals() {
   }, []);
 
   if (isLoading) {
-    return <HomeDealsSkeleton/>;
+    return <HomeDealsSkeleton />;
   }
 
   const Deals = Array.isArray(products)
@@ -37,7 +37,6 @@ export default function HomeDeals() {
   return (
     <>
       <section>
-        
         <div className="container p-7">
           <div className="flex items-center justify-between">
             <div>
@@ -73,11 +72,9 @@ export default function HomeDeals() {
               })}
             </div>
           ) : (
-             <HomeDealsSkeleton/>
+            <HomeDealsSkeleton />
           )}
         </div>
-
-        
       </section>
     </>
   );

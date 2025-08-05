@@ -1,16 +1,16 @@
 import { Link } from "react-router";
 
-import { useContext, useEffect, useState } from "react";
-
+import { useEffect, useState } from "react";
 
 import { calcTimeLeft } from "../../Utils/CounterDown";
-import { productsContext } from "../../Context/Products.context";
+
 import Card from "../../Components/Card/Card";
 import Loading from "../../Components/Loading/Loading";
 import PageMetaData from "../../Components/PageMetaData/PageMetaData";
+import useProducts from "../../Hooks/useProducts";
 
 export default function Deals() {
-  const { isLoading, products, isError, error } = useContext(productsContext);
+  const { isLoading, products, isError, error } = useProducts();
 
   const [timeLeft, setTimeLeft] = useState({
     hours: 0,
@@ -29,7 +29,7 @@ export default function Deals() {
   }, []);
 
   if (isLoading) {
-    return <Loading/>;
+    return <Loading />;
   }
 
   const Deals = Array.isArray(products)
@@ -38,13 +38,8 @@ export default function Deals() {
 
   return (
     <>
-
-              <PageMetaData
-                title="Daily Deals"
-    
-              />
+      <PageMetaData title="Daily Deals" />
       <section>
-        
         <div className="container p-7">
           <div className="flex items-center justify-between">
             <div>
@@ -67,7 +62,6 @@ export default function Deals() {
                 </div>
               </div>
             </div>
-
           </div>
 
           {!isLoading && Deals ? (
@@ -80,8 +74,6 @@ export default function Deals() {
             <Loading />
           )}
         </div>
-
-        
       </section>
     </>
   );

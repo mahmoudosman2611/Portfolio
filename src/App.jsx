@@ -16,21 +16,21 @@ import Categories from "./Pages/Categories/Categories";
 import Brands from "./Pages/Brands/Brands";
 import { ToastContainer } from "react-toastify";
 import Loading from "./Components/Loading/Loading";
-import ProductsProvider from "./Context/Products.context";
-import CategoriesProvider from "./Context/Categories.context";
+
 import AuthProvider from "./Context/Auth.context";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import Cart from "./Pages/Cart/Cart";
 import CartProvider from "./Context/Cart.context";
 import WishListProvider from "./Context/WishList.context";
 import OffLineScreen from "./Components/OffLineScreen/OffLineScreen";
-import SubCategoriesProvider from "./Context/Subcategories.context";
-import BrandsProvider from "./Context/Brands.context";
+
 import FeaturedProducts from "./Pages/FeaturedProducts/FeaturedProducts";
 import Deals from "./Pages/Deals/Deals";
 import VerifyResetCode from "./Pages/VerifyResetCode/VerifyResetCode";
 import ResetPassword from "./Pages/ResetPassword/ResetPassword";
 import ProtectVerifyResetCode from "./Components/ProtectedRoute/ProtectVerifyResetCode";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
   const router = createBrowserRouter([
@@ -151,31 +151,35 @@ function App() {
     },
   ]);
 
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 2 * 60 * 1000,
+        gcTime: 5 * 60 * 1000,
+      },
+    },
+  });
+
   return (
     <>
-      <OffLineScreen>
-        <AuthProvider>
-          <WishListProvider>
-            <CartProvider>
-              <ProductsProvider>
-                <BrandsProvider>
-                  <SubCategoriesProvider>
-                    <CategoriesProvider>
-                      <RouterProvider router={router} />
-                      <ToastContainer
-                        position="top-right"
-                        autoClose={3000}
-                        closeButton={false}
-                        closeOnClick={true}
-                      />
-                    </CategoriesProvider>
-                  </SubCategoriesProvider>
-                </BrandsProvider>
-              </ProductsProvider>
-            </CartProvider>
-          </WishListProvider>
-        </AuthProvider>
-      </OffLineScreen>
+      <QueryClientProvider client={queryClient}>
+        <OffLineScreen>
+          <AuthProvider>
+            <WishListProvider>
+              <CartProvider>
+                <RouterProvider router={router} />
+                <ToastContainer
+                  position="top-right"
+                  autoClose={3000}
+                  closeButton={false}
+                  closeOnClick={true}
+                />
+              </CartProvider>
+            </WishListProvider>
+          </AuthProvider>
+        </OffLineScreen>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </>
   );
 }

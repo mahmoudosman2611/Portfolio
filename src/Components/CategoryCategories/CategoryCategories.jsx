@@ -1,18 +1,17 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext } from "react";
+
 import { Link } from "react-router";
 import Loading from "../Loading/Loading";
 
-import { CategoriesContext } from "../../Context/Categories.context";
+
 import CategoryCategoriesSkeleton from "../Skeleton/CategoryCategoriesSkeleton";
+import useCategories from "../../Hooks/useCategories";
 
 export default function CategoryCategories() {
-  const { isLoading, categories, isError, error } =
-    useContext(CategoriesContext);
+  const { isLoading, categories, isError, error } = useCategories();
 
   if (isLoading) {
-    return <CategoryCategoriesSkeleton/>;
+    return <CategoryCategoriesSkeleton />;
   }
 
   return (
@@ -24,9 +23,10 @@ export default function CategoryCategories() {
               <h2 className="lg:text-2xl text-base font-bold text-gray-600">
                 Shop By Categories
               </h2>
-              <span className="text-sm font-bold text-gray-600">Browse Our wide selection of Products by Category</span>
+              <span className="text-sm font-bold text-gray-600">
+                Browse Our wide selection of Products by Category
+              </span>
             </div>
-
           </div>
           {!isLoading && categories ? (
             <div className="grid xl:grid-cols-6 grid-cols-2 py-8 gap-6 ">
