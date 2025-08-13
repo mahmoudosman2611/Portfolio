@@ -24,7 +24,7 @@ export default function Navbar() {
           bg-white/10 backdrop-blur-md px-10 border-b border-white/20">
           
           {/* Top Navbar */}
-          <div className="hidden lg:flex items-center justify-between py-2 text-sm text-white">
+          {/* <div className="hidden lg:flex items-center justify-between py-2 text-sm  text-white">
             <ul className="flex items-center justify-center gap-5">
               <li className="flex items-center gap-2">
                 <FontAwesomeIcon icon={faPhone} className="text-primary-300" />
@@ -39,11 +39,11 @@ export default function Navbar() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Main Navbar */}
-          <nav className="flex items-center justify-between py-5 gap-2">
-            <h1 className="font-bold text-2xl md:text-3xl text-white hover:text-primary-300 transition-colors">
+          <nav className="flex items-center justify-between py-4 gap-2">
+            <h1 className="font-bold text-xl lg:text-3xl text-white hover:text-primary-300 transition-colors">
               <Link to={`/`} className="tracking-wide">
                 Mahmoud Osman
               </Link>
@@ -57,25 +57,25 @@ export default function Navbar() {
                     `${isActive ? "text-primary-300" : ""} flex flex-col items-center gap-1 hover:text-primary-300 transition-colors`
                   }
                 >
-                  <FontAwesomeIcon icon={faHouse} className="text-xl" />
+                  <FontAwesomeIcon icon={faHouse} className="" />
                   <span className="text-sm">Home</span>
                 </NavLink>
               </li>
               <li>
                 <a href="#skills" className="flex flex-col items-center gap-2 hover:text-primary-300 transition-colors">
-                  <FontAwesomeIcon icon={faScrewdriverWrench} className="text-2xl" />
+                  <FontAwesomeIcon icon={faScrewdriverWrench} className="" />
                   <span className="text-sm">Skills</span>
                 </a>
               </li>
               <li>
                 <a href="#Projects" className="flex flex-col items-center gap-2 hover:text-primary-300 transition-colors">
-                  <FontAwesomeIcon icon={faLaptop} className="text-2xl" />
+                  <FontAwesomeIcon icon={faLaptop} className="" />
                   <span className="text-sm">Projects</span>
                 </a>
               </li>
               <li>
                 <a href="#Footer" className="flex flex-col items-center gap-2 hover:text-primary-300 transition-colors">
-                  <FontAwesomeIcon icon={faPhone} className="text-2xl" />
+                  <FontAwesomeIcon icon={faPhone} className="" />
                   <span className="text-sm">Contact Me</span>
                 </a>
               </li>
