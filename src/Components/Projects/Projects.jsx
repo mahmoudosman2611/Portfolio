@@ -11,8 +11,8 @@ import Weather from "../../assets/imgs/Weather.PNG";
 import Mealify from "../../assets/imgs/Mealify.PNG";
 import ReactRouter from "../../assets/imgs/ReactRouter.PNG";
 import Bookmarker from "../../assets/imgs/Bookmarker.PNG";
-import SmartLogin from "../../assets/imgs/SmartLogin.PNG";
-import QuotesGenerator from "../../assets/imgs/QuotesGenerator.PNG";
+import SmartLogin from "../../assets/imgs/SmartLogin.png";
+import QuotesGenerator from "../../assets/imgs/QuotesGenerator.png";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
