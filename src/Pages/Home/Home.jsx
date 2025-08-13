@@ -1,25 +1,22 @@
-import HomeCategories from "../../Components/HomeCategories/HomeCategories";
-import HomeDeals from "../../Components/HomeDeals/HomeDeals";
-import HomeFeaturedProducts from "../../Components/HomeFeaturedProducts/HomeFeaturedProducts";
-import HomeFeatures from "../../Components/HomeFeatures/HomeFeatures";
-import HomeSlider from "../../Components/HomeSlider/HomeSlider";
+
 import PageMetaData from "../../Components/PageMetaData/PageMetaData";
+import Portfolio from "../../Components/Portfolio/Portfolio";
+import Projects from "../../Components/Projects/Projects";
+import Skills from "../../Components/Skills/Skills";
 
 export default function Home() {
   return (
     <>
       <PageMetaData
-        title="Home Page | FreshCart"
+        title="Mahmoud Osman -Frontend Developer"
         description="Discover fresh deals and best-selling products on FreshCart – your ultimate online grocery destination."
         keywords="FreshCart, grocery, deals, fresh food, online shopping, offers"
         author="Mahmoud Osman"
       />
+      <Portfolio />
+      <Skills/>
+      <Projects/>
 
-      <HomeSlider />
-      <HomeFeatures />
-      <HomeCategories />
-      <HomeDeals />
-      <HomeFeaturedProducts />
     </>
   );
 }

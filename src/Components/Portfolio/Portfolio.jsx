@@ -1,0 +1,139 @@
+import React from "react";
+import mahmoudosmanImg from "../../assets/imgs/MahmoudOsmanImg.jpg";
+import "animate.css";
+
+export default function PortfolioFuturistic() {
+  return (
+    <section className="relative min-h-[92vh] overflow-hidden bg-black text-white pt-20 lg:pt-28">
+      {/* Neon grid */}
+      <div
+        className="absolute inset-0 opacity-20 md:opacity-30"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 50% 50%, rgba(59,130,246,0.15), transparent 40%),
+            linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: "100% 100%, 60px 60px, 60px 60px",
+          backgroundPosition: "center, center, center",
+        }}
+      />
+
+      {/* Aurora blobs (blue palette) */}
+      <div className="hidden md:block pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl opacity-30 aurora" />
+      <div className="hidden md:block pointer-events-none absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-25 aurora-2" />
+
+      {/* Star dust */}
+      <div className="pointer-events-none absolute inset-0 stars opacity-20 md:opacity-40" />
+
+      {/* Content */}
+      <div className="relative container mx-auto px-6 md:px-20 py-10 md:py-16">
+        <div className="grid items-center gap-10 md:gap-12 lg:grid-cols-2">
+          {/* Left: Text card */}
+          <div className="order-2 lg:order-1 animate__animated animate__backInLeft ">
+            <div className="max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-md shadow-[0_0_30px_rgba(59,130,246,0.10)]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs md:text-sm tracking-wider border border-white/20">
+                <span className="h-2 w-2 rounded-full bg-primary-400 shadow-[0_0_10px_rgba(96,165,250,0.9)]" />
+                FRONTEND DEVELOPER
+              </span>
+
+              <h1 className="mt-4  font-extrabold leading-tight break-words text-[clamp(2rem,6vw,3.75rem)] md:text-[clamp(2.5rem,6vw,3.75rem)]">
+                <span className="bg-gradient-to-r from-primary-300 via-primary-200 to-primary-50 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">
+                  Mahmoud&nbsp;Osman
+                </span>
+              </h1>
+
+              <p className="mt-3 text-base md:text-lg text-white/80">
+                Crafting cosmic‑grade, high‑performance UIs with modern stacks.
+                Pixel‑true, accessible, and fast.
+              </p>
+
+              {/* Badges */}
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["React", "TypeScript", "Tailwind", "Vite", "Redux"].map(
+                  (t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80"
+                    >
+                      {t}
+                    </span>
+                  )
+                )}
+              </div>
+
+              {/* CTAs */}
+              <div className="mt-7 flex flex-col sm:flex-row flex-wrap items-center gap-3">
+                <a
+                  href="#Projects"
+                  className="group relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium"
+                >
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 opacity-80 md:opacity-90 blur-[10px] transition group-hover:blur-[14px]" />
+                  <span className="relative rounded-full bg-black/60 px-6 py-3 border border-white/20">
+                    View Projects
+                  </span>
+                </a>
+
+                <a
+                  href="#Footer"
+                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm hover:bg-white/10 transition"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Avatar with blue neon ring */}
+          <div className="order-1 lg:order-2 flex justify-center animate__animated animate__backInRight">
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-primary-500 via-primary-400 to-transparent opacity-30 md:opacity-50 blur-2xl" />
+              <img
+                src={mahmoudosmanImg}
+                alt="Mahmoud Osman"
+                className="relative aspect-square w-40 sm:w-56 md:w-80 lg:w-[520px] rounded-full object-cover shadow-[0_10px_40px_rgba(0,0,0,0.7)] ring-2 ring-white/30 md:ring-white/40"
+                loading="eager"
+                sizes="(min-width:1024px) 520px, (min-width:768px) 320px, 160px"
+              />
+              {/* orbiting dot */}
+              <span className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-primary-400 shadow-[0_0_18px_rgba(96,165,250,0.9)] animate-ping motion-reduce:hidden" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Local styles (blue aurora + stars) */}
+      <style>{`
+        @keyframes float {
+          0%,100% { transform: translateY(0) translateX(0); }
+          50% { transform: translateY(-12px) translateX(6px); }
+        }
+        .aurora {
+          background:
+            radial-gradient(closest-side, rgba(59,130,246,0.35), transparent 70%),
+            radial-gradient(closest-side, rgba(29,78,216,0.30), transparent 60%);
+          animation: float 8s ease-in-out infinite;
+        }
+        .aurora-2 {
+          background:
+            radial-gradient(closest-side, rgba(29,78,216,0.35), transparent 70%),
+            radial-gradient(closest-side, rgba(59,130,246,0.25), transparent 60%);
+          animation: float 10s ease-in-out infinite reverse;
+        }
+        .stars {
+          background-image:
+            radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.9), transparent 60%),
+            radial-gradient(1.5px 1.5px at 80% 20%, rgba(255,255,255,0.8), transparent 60%),
+            radial-gradient(1.8px 1.8px at 60% 70%, rgba(255,255,255,0.85), transparent 60%),
+            radial-gradient(1.2px 1.2px at 30% 80%, rgba(255,255,255,0.8), transparent 60%),
+            radial-gradient(1.3px 1.3px at 50% 50%, rgba(255,255,255,0.75), transparent 60%);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .aurora, .aurora-2 { animation: none !important; }
+        }
+      `}</style>
+    </section>
+  );
+}

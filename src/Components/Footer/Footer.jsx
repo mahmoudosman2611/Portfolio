@@ -1,159 +1,232 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logo from "../../assets/imgs/freshcart-logo.svg";
-import miniLogo from "../../assets/imgs/mini-logo.png";
 import {
   faFacebookF,
   faInstagram,
-  faPinterestP,
-  faTwitter,
+  faGithub,
+  faLinkedin,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router";
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowUp,
+  faEnvelope,
+  faPhone,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Footer() {
   return (
-    <>
-      <footer className="py-5 bg-white border-t-1 border-gray-400/20">
-        <div className="container">
-          <div className="grid md:grid-cols-5 lg:col-2 gap-4 py-3">
-            <div className="space-y-3 xl:col-span-2 ">
-              <img src={Logo} alt="FreshCart logo" />
-              <p>
-                FreshCart is a versatile e-commerce platform offering a wide
-                range of products, from clothing to electronics. It provides a
-                user-friendly experience for seamless shopping across diverse
-                categories.
-              </p>
-              <ul className="flex gap-4 text-lg text-gray-500 *:hover:text-primary-600 *:transition-colors *:duration-300 *:cursor-pointer">
-                <li>
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faTwitter} />
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faPinterestP} />
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3 ">
-              <h2 className="font-bold text-xl">Categories</h2>
-              <ul className="space-y-3  *:hover:text-primary-600 *:transition-colors *:duration-300 *:cursor-pointer">
-                <li>
-                  <Link to={``} className="flex gap-2 items-center">
-                    <span>men`s Fashions</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={``} className="flex gap-2 items-center">
-                    <span>Women`s Fashions</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={``} className="flex gap-2 items-center">
-                    <span>Baby&Toy</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={``} className="flex gap-2 items-center">
-                    <span>Beauty & Health</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={``} className="flex gap-2 items-center">
-                    <span>Electronics</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3 ">
-              <h2 className="font-bold text-xl">Quick Links</h2>
-              <ul className="space-y-3  *:hover:text-primary-600 *:transition-colors *:duration-300 *:cursor-pointer">
-                <li>
-                  <Link to={`/About`} className="flex gap-2 items-center">
-                    <span>About Us</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/Contact`} className="flex gap-2 items-center">
-                    <span>Contact Us</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`/Privacy-Policy`}
-                    className="flex gap-2 items-center"
-                  >
-                    <span>Privacy Policy</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/Terms`} className="flex gap-2 items-center">
-                    <span>Terms of Service</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`ShippingPolicy`}
-                    className="flex gap-2 items-center"
-                  >
-                    <span>Shipping Policy</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h2 className="font-bold text-xl">Customer Service</h2>
-              <ul className="space-y-3  *:hover:text-primary-600 *:transition-colors *:duration-300 *:cursor-pointer">
-                <li>
-                  <Link to={`/Account`} className="flex gap-2 items-center">
-                    <span>My Account</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/Orders`} className="flex gap-2 items-center">
-                    <span>My Orders</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/WishList`} className="flex gap-2 items-center">
-                    <span>Wish List</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to={`/Terms`} className="flex gap-2 items-center">
-                    <span>Return & Refused</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to={`ShippingPolicy`}
-                    className="flex gap-2 items-center"
-                  >
-                    <span>Help Center</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+    <footer
+      id="Footer"
+      className="relative overflow-hidden bg-black text-white"
+    >
+      {/* Grid + halo background */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 50% 50%, rgba(59,130,246,0.18), transparent 45%),
+            linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: "100% 100%, 60px 60px, 60px 60px",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -top-24 -left-24 hidden md:block h-80 w-80 rounded-full blur-3xl opacity-25"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(29,78,216,0.35), transparent 70%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -bottom-24 -right-24 hidden md:block h-[26rem] w-[26rem] rounded-full blur-3xl opacity-25"
+        style={{
+          background:
+            "radial-gradient(closest-side, rgba(59,130,246,0.28), transparent 70%)",
+        }}
+      />
+
+      <div className="relative container mx-auto px-6 md:px-20 py-12 md:py-16">
+        {/* Top grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
+          {/* About */}
+          <div className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:scale-105 transition-transform duration-300">
+            <h2 className="font-extrabold text-2xl bg-gradient-to-r from-primary-300 via-primary-200 to-primary-50 bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(59,130,246,0.25)]">
+              Mahmoud Osman
+            </h2>
+            <p className="text-white/70">
+              Frontend Developer — I build fast, accessible, and scalable web
+              UIs. Let’s craft delightful user experiences.
+            </p>
           </div>
 
-          <div className="flex items-center justify-between py-4 border-t-2 border-gray-400/50">
-            <p>
-              &copy; {new Date().getFullYear()} <strong>Mahmoud Osman</strong> FreshCart. All rights reserved.
-            </p>
-            <img className="w-10 animate-bounce" src={miniLogo} alt="FreshCart logo" />
+          {/* Quick Links */}
+          <div className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:scale-105 transition-transform duration-300">
+            <h3 className="font-bold text-xl text-primary-200">Quick Links</h3>
+            <ul className="space-y-3">
+              {[
+                { href: "#about", label: "About" },
+                { href: "#skills", label: "Skills" },
+                { href: "#projects", label: "Projects" },
+                { href: "#contact", label: "Contact" },
+                {
+                  href: "/Mahmoud_Osman_CV.pdf",
+                  label: "Download CV",
+                  external: true,
+                },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    {...(l.external
+                      ? { target: "_blank", rel: "noreferrer" }
+                      : {})}
+                    className="text-white/80 hover:text-primary-200 transition-colors"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-3 rounded-2xl border hover:scale-105 transition-transform duration-300 border-white/10 bg-white/5 p-4 md:p-5 backdrop-blur-md">
+            <h3 className="font-bold text-lg md:text-xl text-primary-200">
+              Contact
+            </h3>
+
+            <ul className="space-y-2.5 md:space-y-3">
+              {/* Email */}
+              <li className="min-w-0 flex items-center gap-3 text-white/80 hover:text-primary-200 transition-colors">
+                <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/10 bg-black/40">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </span>
+                <a
+                  href="mailto:mahmoudosmann2018@gmail.com"
+                  className="flex-1 min-w-0 break-words leading-5 outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 rounded-sm"
+                  aria-label="Send email to mahmoudosmann2018@gmail.com"
+                >
+                  mahmoudosmann2018@gmail.com
+                </a>
+              </li>
+
+              {/* Phone */}
+              <li className="min-w-0 flex items-center gap-3 text-white/80 hover:text-primary-200 transition-colors">
+                <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/10 bg-black/40">
+                  <FontAwesomeIcon icon={faPhone} />
+                </span>
+                <a
+                  href="tel:+201024443168"
+                  className="flex-1 min-w-0 break-words leading-5 outline-none focus-visible:ring-2 focus-visible:ring-primary-500/60 rounded-sm"
+                  aria-label="Call +201024443168"
+                >
+                  +201024443168
+                </a>
+              </li>
+
+              {/* Location */}
+              <li className="min-w-0 flex items-center gap-3 text-white/80 hover:text-primary-200 transition-colors">
+                <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-white/10 bg-black/40">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                </span>
+                <span className="flex-1 min-w-0 break-words leading-5">
+                  Cairo, Egypt
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Follow */}
+          <div className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:scale-105 transition-transform duration-300">
+            <h3 className="font-bold text-xl text-primary-200">Follow</h3>
+            <ul className="flex flex-wrap gap-3">
+              {[
+                {
+                  href: "https://github.com/mahmoudosman2611",
+                  icon: faGithub,
+                  label: "GitHub",
+                },
+                {
+                  href: "https://www.linkedin.com/in/mahmoudosman2611/",
+                  icon: faLinkedin,
+                  label: "LinkedIn",
+                },
+                {
+                  href: "https://x.com/osmann1993?s=09",
+                  icon: faXTwitter,
+                  label: "Twitter",
+                },
+                {
+                  href: "https://www.instagram.com/mahmoudosman2611/",
+                  icon: faInstagram,
+                  label: "Instagram",
+                },
+                {
+                  href: "https://www.facebook.com/osmann1993/",
+                  icon: faFacebookF,
+                  label: "Facebook",
+                },
+              ].map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/80
+                               hover:text-primary-50 hover:border-primary-400/40 hover:shadow-[0_0_18px_rgba(59,130,246,0.45)]
+                               transition-all"
+                  >
+                    <FontAwesomeIcon icon={s.icon} />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full shadow-lg"
-        >
+
+        {/* Bottom bar */}
+        <div className="mt-2 flex flex-col gap-3 sm:flex-row items-center justify-between pt-4 border-t border-white/10">
+          <p className="text-white/70 text-sm text-center sm:text-left">
+            &copy; {new Date().getFullYear()} <strong>Mahmoud Osman</strong>.
+            All rights reserved.
+          </p>
+
+          <nav className="flex gap-4 text-sm">
+            <a
+              href="/privacy"
+              className="text-white/70 hover:text-primary-200 transition-colors"
+            >
+              Privacy
+            </a>
+            <a
+              href="/terms"
+              className="text-white/70 hover:text-primary-200 transition-colors"
+            >
+              Terms
+            </a>
+            <a
+              href="#contact"
+              className="text-white/70 hover:text-primary-200 transition-colors"
+            >
+              Hire Me
+            </a>
+          </nav>
+        </div>
+      </div>
+
+      {/* Back to top */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+        className="fixed bottom-6 right-6 z-[60] group"
+      >
+        <span className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 blur-[14px] opacity-60 group-hover:opacity-80 transition" />
+        <span className="inline-flex items-center justify-center rounded-full bg-primary-600 hover:bg-primary-700 text-white h-11 w-11 shadow-lg transition">
           <FontAwesomeIcon icon={faArrowUp} />
-        </button>
-      </footer>
-    </>
+        </span>
+      </button>
+    </footer>
   );
 }

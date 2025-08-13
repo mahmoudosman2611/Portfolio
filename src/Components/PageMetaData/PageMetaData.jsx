@@ -1,9 +1,9 @@
 import React from "react";
 
 export default function PageMetaData({
-  title = "FreshCart",
-  description = "Discover fresh deals and best-selling products on FreshCart",
-  keywords = "FreshCart, grocery, deals, fresh food, online shopping, offers",
+  title = "Mahmoud Osman-Frontend Developer",
+  description = "Portfolio of Mahmoud Osman showcasing modern web development projects using React, TypeScript, and TailwindCSS.",
+  keywords = "Mahmoud Osman, Frontend Developer, React, TypeScript, JavaScript, Portfolio, Web Development, UI, UX",
   author = "Mahmoud Osman",
 }) {
   return (

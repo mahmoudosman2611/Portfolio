@@ -1,129 +1,53 @@
-import {
-  faHeart as faHeartRegular,
-  faEye,
-} from "@fortawesome/free-regular-svg-icons";
-import {
-  faHeart as faHeartSolid,
-  faCodeCompare,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { calculateDiscountPercentage } from "../../Utils/CalcDiscount";
-import Rating from "../Rating/Rating";
-import { Link } from "react-router";
-import { useContext, useState, useEffect } from "react";
-import { CartContext } from "../../Context/Cart.context";
-import { WishListContext } from "../../Context/WishList.context";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
-export default function Card({ productDetails }) {
-  const {
-    id,
-    imageCover,
-    priceAfterDiscount,
-    price,
-    ratingsAverage,
-    title,
-    ratingsQuantity,
-    category,
-  } = productDetails;
-
-  const { handelAddingProductToCart } = useContext(CartContext);
-  const {
-    handelAddingProductToWishList,
-    handelRemoveWishListItem,
-    wishListInfo,
-  } = useContext(WishListContext);
-
-  const Discount = calculateDiscountPercentage(price, priceAfterDiscount);
-
-  const [localWish, setLocalWish] = useState(false);
-
-  useEffect(() => {
-    const inWish = Array.isArray(wishListInfo?.data)
-      ? wishListInfo.data.some((item) => item.id === id)
-      : false;
-    setLocalWish(inWish);
-  }, [wishListInfo, id]);
-
+export default function Card({ title, img, liveDemo, repo, description }) {
   return (
-    <>
-      <div className="card group rounded-xl shadow-xl overflow-hidden relative hover:shadow-2xl ">
-        <div>
-          <Link to={`/Product/${id}`} className="block">
-            <img src={imageCover} alt="" className="lg:h-60 h-90 mx-auto" />
-          </Link>
-        </div>
-        <div className="cardContent p-4 space-y-3">
-          <div>
-            <span className="text-sm text-gray-500">{category.name}</span>
-            <h2 className="font-semibold ">
-              <Link className="line-clamp-1 " to={`Product/${id}`}>
-                {title}
-              </Link>
-            </h2>
-          </div>
+    <div
+      className="group relative flex flex-col h-full rounded-2xl border border-white/10 
+                 bg-white/5 backdrop-blur-md overflow-hidden 
+                 shadow-[0_0_24px_rgba(59,130,246,0.08)] 
+                 transition-all duration-300 hover:-translate-y-0.5 
+                 hover:shadow-[0_0_34px_rgba(59,130,246,0.18)]"
+    >
+      {/* صورة المشروع */}
+      <div className="relative overflow-hidden">
+        <img
+          src={img}
+          alt={`${title} preview`}
+          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* Overlay خفيف عند الـhover */}
+        <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/10 transition-colors duration-300" />
+      </div>
 
-          <div className="rating flex gap-2 items-center">
-            <Rating rating={ratingsAverage} />
-            <span>{ratingsAverage}</span>
-            <span>({ratingsQuantity})</span>
-          </div>
+      {/* التفاصيل */}
+      <div className="flex flex-col flex-1 p-5">
+        <h3 className="text-lg md:text-xl font-semibold text-white">{title}</h3>
+        <p className="mt-2 text-sm text-white/70 line-clamp-3">{description}</p>
 
-          <div className="price flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className=" font-bold text-primary-600">
-                {priceAfterDiscount ? priceAfterDiscount : price} EGP
-              </span>
-              {priceAfterDiscount && (
-                <del className="text-gray-500">{price}EGP</del>
-              )}
-            </div>
-            <button
-              onClick={() => {
-                handelAddingProductToCart({ id });
-              }}
-              className="btn bg-primary-500 text-white p-0 size-8 rounded-full hover:bg-primary-700 shrink-0"
-            >
-              <FontAwesomeIcon icon={faPlus} />
-            </button>
-          </div>
-
-          <div className="actions absolute top-4 right-4  flex flex-col gap-2 text-gray-500 *:hover:text-primary-500 *:transition-colors *:duration-200 ">
-            <button
-              onClick={() => {
-                if (localWish) {
-                  handelRemoveWishListItem({ id });
-                } else {
-                  handelAddingProductToWishList({ id });
-                }
-                // الحالة هتتحدث تلقائيًا في useEffect بعد تحديث wishList
-              }}
-              title={localWish ? "Remove from wishlist" : "Add to wishlist"}
-            >
-              <FontAwesomeIcon
-                icon={localWish ? faHeartSolid : faHeartRegular}
-                className={localWish ? "text-red-600" : ""}
-              />
-            </button>
-
-            <button>
-              <FontAwesomeIcon icon={faCodeCompare} />
-            </button>
-
-            <button>
-              <Link to={`Product/${id}`} className="cursor-pointer">
-                <FontAwesomeIcon icon={faEye} />
-              </Link>
-            </button>
-          </div>
-
-          {priceAfterDiscount && (
-            <div className="badge absolute left-3 top-4 bg-red-500 text-sm text-white rounded-md px-2 py-1">
-              <span>{Discount}%</span>
-            </div>
-          )}
+        {/* الأزرار */}
+        <div className="mt-auto flex items-center gap-4 pt-4">
+          <a
+            href={repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-primary-200 hover:text-primary-50 transition-colors duration-300"
+          >
+            <FontAwesomeIcon icon={faGithub} size="lg" /> GitHub
+          </a>
+          <a
+            href={liveDemo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-primary-400 hover:text-primary-200 transition-colors duration-300"
+          >
+            <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" /> Live Demo
+          </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }
