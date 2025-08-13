@@ -7,7 +7,7 @@ import {
   faScrewdriverWrench,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+
 import { Link, NavLink } from "react-router";
 import { useState } from "react";
 
