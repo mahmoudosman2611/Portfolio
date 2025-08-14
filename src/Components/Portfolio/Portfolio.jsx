@@ -1,6 +1,10 @@
 import React from "react";
 import mahmoudosmanImg from "../../assets/imgs/MahmoudOsmanImg.jpg";
+import linkedinAnimation from "../../assets/jsonIcons/Linkedin Icon.json";
+import GitHubicon from "../../assets/jsonIcons/GitHubicon.json";
+import Gmail from "../../assets/jsonIcons/Gmail.json";
 import "animate.css";
+import Lottie from "lottie-react";
 
 export default function PortfolioFuturistic() {
   return (
@@ -37,16 +41,16 @@ export default function PortfolioFuturistic() {
                 FRONTEND DEVELOPER
               </span>
 
-<h1 className="mt-4 font-extrabold leading-tight break-words text-2xl md:text-5xl">
-  <span className="bg-gradient-to-r from-primary-300 via-primary-200 to-primary-50 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">
-    Mahmoud&nbsp;Osman
-  </span>
-</h1>
+              <h1 className="mt-4 font-extrabold leading-tight break-words text-2xl md:text-5xl">
+                <span className="bg-gradient-to-r from-primary-300 via-primary-200 to-primary-50 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.35)]">
+                  Mahmoud&nbsp;Osman
+                </span>
+              </h1>
 
 
               <p className="mt-3 text-base md:text-lg text-white/80">
-                Crafting cosmic‑grade, high‑performance UIs with modern stacks.
-                Pixel‑true, accessible, and fast.
+                Building pixel-perfect, accessible, and lightning-fast
+                interfaces with modern web technologies.
               </p>
 
               {/* Badges */}
@@ -81,6 +85,38 @@ export default function PortfolioFuturistic() {
                 >
                   Contact Me
                 </a>
+              </div>
+                            <div className="lottieIcons flex justify-center items-center gap-1">
+                <div  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
+                  <a  target="_blank" href="https://github.com/mahmoudosman2611">
+                    <Lottie
+                      animationData={GitHubicon}
+                      loop
+                      autoplay
+                     
+                    />
+                  </a>
+                </div>
+                <div  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
+                  <a  target="_blank" href="https://www.linkedin.com/in/mahmoudosman2611/">
+                    <Lottie
+                      animationData={linkedinAnimation}
+                      loop
+                      autoplay
+                     
+                    />
+                  </a>
+                </div>
+                <div  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
+                  <a   href="mailto:mahmoudosmann2018@gmail.com">
+                    <Lottie
+                      animationData={Gmail}
+                      loop
+                      autoplay
+                     
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
