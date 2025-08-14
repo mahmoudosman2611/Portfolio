@@ -47,24 +47,20 @@ export default function PortfolioFuturistic() {
                 </span>
               </h1>
 
-
               <p className="mt-3 text-base md:text-lg text-white/80">
-                Building pixel-perfect, accessible, and lightning-fast
-                interfaces with modern web technologies.
+                Building Modern Web Applications.
               </p>
 
               {/* Badges */}
               <div className="mt-5 flex flex-wrap gap-2">
-                {["React", "TypeScript", "Tailwind", "Vite", "Redux"].map(
-                  (t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80"
-                    >
-                      {t}
-                    </span>
-                  )
-                )}
+                {["HTML", "CSS", "JavaScript", "REACT", "NEXT"].map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
 
               {/* CTAs */}
@@ -86,35 +82,23 @@ export default function PortfolioFuturistic() {
                   Contact Me
                 </a>
               </div>
-                            <div className="lottieIcons flex justify-center items-center gap-1">
-                <div  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
-                  <a  target="_blank" href="https://github.com/mahmoudosman2611">
-                    <Lottie
-                      animationData={GitHubicon}
-                      loop
-                      autoplay
-                     
-                    />
+              <div className="lottieIcons flex justify-center items-center gap-1 mt-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
+                  <a target="_blank" href="https://github.com/mahmoudosman2611">
+                    <Lottie animationData={GitHubicon} loop autoplay />
                   </a>
                 </div>
-                <div  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
-                  <a  target="_blank" href="https://www.linkedin.com/in/mahmoudosman2611/">
-                    <Lottie
-                      animationData={linkedinAnimation}
-                      loop
-                      autoplay
-                     
-                    />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/mahmoudosman2611/"
+                  >
+                    <Lottie animationData={linkedinAnimation} loop autoplay />
                   </a>
                 </div>
-                <div  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
-                  <a   href="mailto:mahmoudosmann2018@gmail.com">
-                    <Lottie
-                      animationData={Gmail}
-                      loop
-                      autoplay
-                     
-                    />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
+                  <a href="mailto:mahmoudosmann2018@gmail.com">
+                    <Lottie animationData={Gmail} loop autoplay />
                   </a>
                 </div>
               </div>

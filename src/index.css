@@ -4,7 +4,7 @@ body {
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 7rem; /* غيّر القيمة حسب ارتفاع الهيدر */
+  scroll-padding-top: 2rem; /* غيّر القيمة حسب ارتفاع الهيدر */
 }
 
 

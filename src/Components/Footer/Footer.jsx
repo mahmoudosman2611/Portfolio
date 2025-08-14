@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer
       id="Footer"
-      className="relative overflow-hidden bg-black text-white"
+      className="relative overflow-hidden bg-black text-white py-4"
     >
       {/* Grid + halo background */}
       <div
@@ -193,26 +193,7 @@ export default function Footer() {
             All rights reserved.
           </p>
 
-          <nav className="flex gap-4 text-sm">
-            <a
-              href="/privacy"
-              className="text-white/70 hover:text-primary-200 transition-colors"
-            >
-              Privacy
-            </a>
-            <a
-              href="/terms"
-              className="text-white/70 hover:text-primary-200 transition-colors"
-            >
-              Terms
-            </a>
-            <a
-              href="#contact"
-              className="text-white/70 hover:text-primary-200 transition-colors"
-            >
-              Hire Me
-            </a>
-          </nav>
+
         </div>
       </div>
 
