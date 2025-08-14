@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
+  faCode,
   faHouse,
   faLaptop,
   faPhone,
@@ -43,11 +44,16 @@ export default function Navbar() {
 
           {/* Main Navbar */}
           <nav className="flex items-center justify-between py-4 gap-2">
-            <h1 className="font-bold text-xl lg:text-3xl text-white hover:text-primary-300 transition-colors">
+            <div className="flex items-center  gap-3">
+              <FontAwesomeIcon icon={faCode} className="  fa-beat text-primary-600 text-xl lg:text-2xl" /> 
+                          <h1 className="font-bold text-xl lg:text-2xl text-white hover:text-primary-300 transition-colors">
               <Link to={`/`} className="tracking-wide">
+               
                 Mahmoud Osman
               </Link>
             </h1>
+            </div>
+
 
             <ul className="hidden lg:flex items-center gap-15 text-white">
               <li>
@@ -81,7 +87,7 @@ export default function Navbar() {
               </li>
             </ul>
 
-            <button onClick={toggleMenu} className="bg-primary-400 text-white text-xl block lg:hidden p-2 rounded">
+            <button onClick={toggleMenu} className="bg-primary-400 text-white text-xl block lg:hidden btn ">
               {isMenuOpen ? <FontAwesomeIcon icon={faXmark} /> : <FontAwesomeIcon icon={faBars} />}
             </button>
           </nav>
@@ -97,10 +103,13 @@ export default function Navbar() {
                 border-r border-white/20 w-64">
               
               <div className="flex items-center justify-between py-5 border-b border-white/20">
-                <h1 className="font-bold text-xl md:text-3xl hover:text-primary-300 transition-colors">
+<div className="flex items-center gap-3">
+                <FontAwesomeIcon icon={faCode} className=" fa-beat text-primary-600 text-sm md:text-3xl" /> 
+                <h1 className="font-bold text-sm md:text-2xl hover:text-primary-300 transition-colors">
                   <Link to={`/`} className="tracking-wide">Mahmoud Osman</Link>
                 </h1>
-                <button onClick={toggleMenu} className="text-white">
+</div>
+                <button onClick={toggleMenu} className="text-white ">
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
               </div>
