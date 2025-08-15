@@ -12,8 +12,23 @@ import {
   faPhone,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const firstSection = document.querySelector("section");
+      if (firstSection) {
+        const sectionHeight = firstSection.offsetHeight;
+        setIsVisible(window.scrollY > sectionHeight);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <footer
       id="Footer"
@@ -192,22 +207,22 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} <strong>Mahmoud Osman</strong>.
             All rights reserved.
           </p>
-
-
         </div>
       </div>
 
       {/* Back to top */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        aria-label="Back to top"
-        className="fixed bottom-6 right-6 z-[60] group"
-      >
-        <span className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 blur-[14px] opacity-60 group-hover:opacity-80 transition" />
-        <span className="inline-flex items-center justify-center rounded-full bg-primary-600 hover:bg-primary-700 text-white h-11 w-11 shadow-lg transition">
-          <FontAwesomeIcon icon={faArrowUp} />
-        </span>
-      </button>
+      {isVisible && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="fixed bottom-6 right-6 z-[60] group"
+        >
+          <span className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary-500 to-primary-400 blur-[14px] opacity-60 group-hover:opacity-80 transition" />
+          <span className="inline-flex items-center justify-center rounded-full bg-primary-600 hover:bg-primary-700 text-white h-11 w-11 shadow-lg transition">
+            <FontAwesomeIcon icon={faArrowUp} />
+          </span>
+        </button>
+      )}
     </footer>
   );
 }

@@ -45,19 +45,18 @@ export default function Navbar() {
 
           {/* Main Navbar */}
           <nav className="flex items-center justify-between py-4 gap-2">
-<div className="flex items-center gap-3">
-  <FontAwesomeIcon
-    icon={faCode}
-    className=" text-primary-600 text-xl lg:text-2xl"
-  />
-  <h1 className="flex items-center font-bold text-xs lg:text-2xl text-white hover:text-primary-300 transition-colors">
-    <Link to={`/`} className="tracking-wide">
-      Mahmoud Osman
-    </Link>
-    <span className="ml-2 w-2 h-2 rounded-full bg-primary-600"></span>
-  </h1>
-</div>
-
+            <div className="flex items-center gap-3">
+              <FontAwesomeIcon
+                icon={faCode}
+                className=" fa-beat text-primary-600 text-xl lg:text-2xl"
+              />
+              <h1 className="flex items-center font-bold text-xs lg:text-2xl text-white hover:text-primary-300 transition-colors">
+                <Link to={`/`} className="tracking-wide">
+                  Mahmoud Osman
+                </Link>
+                <span className="ml-2 w-1 h-1 md:w-2 md:h-2 rounded-full bg-primary-600"></span>
+              </h1>
+            </div>
 
             <ul className="hidden lg:flex items-center gap-15 text-white">
               <li>
@@ -138,7 +137,7 @@ export default function Navbar() {
                     <Link to={`/`} className="tracking-wide">
                       Mahmoud Osman
                     </Link>
-                      <span className="ml-2 w-2 h-2 rounded-full bg-primary-600"></span>
+                    <span className="ml-2 w-1 h-1 rounded-full bg-primary-600"></span>
                   </h1>
                 </div>
                 <button onClick={toggleMenu} className="text-white ">
