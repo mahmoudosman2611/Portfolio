@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../Card/Card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import FreshCartImg from "../../assets/imgs/freshcartproject.PNG";
 import FokirImg from "../../assets/imgs/fokir.png";
@@ -15,6 +17,9 @@ import SmartLogin from "../../assets/imgs/SmartLogin.png";
 import QuotesGenerator from "../../assets/imgs/QuotesGenerator.png";
 
 export default function Projects() {
+    useEffect(() => {
+    AOS.init({ duration: 500, once: false }); // once:false عشان الإيفكت يتكرر كل مرة
+  }, []);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = ["All", "CSS & HTML", "JavaScript", "React", "Next"];
@@ -188,10 +193,12 @@ export default function Projects() {
 
         {/* المشاريع */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.title}
-              className="relative rounded-2xl border border-white/10 bg-white/5 p-1 backdrop-blur-md
+               data-aos="fade-up"
+      data-aos-delay={index * 100} 
+              className="relative  rounded-2xl border border-white/10 bg-white/5 p-1 backdrop-blur-md
                           shadow-[0_0_24px_rgba(59,130,246,0.08)]
                           transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_34px_rgba(59,130,246,0.18)]"
             >
