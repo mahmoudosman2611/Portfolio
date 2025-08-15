@@ -18,7 +18,7 @@ import QuotesGenerator from "../../assets/imgs/QuotesGenerator.png";
 
 export default function Projects() {
     useEffect(() => {
-    AOS.init({ duration: 500, once: false }); // once:false عشان الإيفكت يتكرر كل مرة
+    AOS.init({ duration: 350, once: false,offset: 100,  }); // once:false عشان الإيفكت يتكرر كل مرة
   }, []);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
