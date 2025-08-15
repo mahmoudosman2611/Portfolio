@@ -8,7 +8,7 @@ import Lottie from "lottie-react";
 
 export default function PortfolioFuturistic() {
   return (
-    <section className="relative min-h-[92vh] overflow-hidden bg-black text-white pt-20 lg:pt-28">
+    <section className="relative min-h-[92vh] overflow-hidden bg-black text-white py-10 md:py-20 lg:pt-28">
       {/* Neon grid */}
       <div
         className="absolute inset-0 opacity-20 md:opacity-30"
@@ -23,7 +23,7 @@ export default function PortfolioFuturistic() {
         }}
       />
 
-      {/* Aurora blobs (blue palette) */}
+      {/* Aurora blobs */}
       <div className="hidden md:block pointer-events-none absolute -top-32 -left-32 h-96 w-96 rounded-full blur-3xl opacity-30 aurora" />
       <div className="hidden md:block pointer-events-none absolute -bottom-24 -right-24 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-25 aurora-2" />
 
@@ -34,7 +34,7 @@ export default function PortfolioFuturistic() {
       <div className="relative container mx-auto px-6 md:px-20 py-10 md:py-16">
         <div className="grid items-center gap-10 md:gap-12 lg:grid-cols-2">
           {/* Left: Text card */}
-          <div className="order-2 lg:order-1 animate__animated animate__backInLeft ">
+          <div className="order-2 lg:order-1 animate__animated animate__backInLeft">
             <div className="max-w-xl rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8 backdrop-blur-md shadow-[0_0_30px_rgba(59,130,246,0.10)]">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs md:text-sm tracking-wider border border-white/20">
                 <span className="h-2 w-2 rounded-full bg-primary-400 shadow-[0_0_10px_rgba(96,165,250,0.9)]" />
@@ -82,6 +82,8 @@ export default function PortfolioFuturistic() {
                   Contact Me
                 </a>
               </div>
+
+              {/* Social Icons */}
               <div className="lottieIcons flex justify-center items-center gap-1 mt-4">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
                   <a target="_blank" href="https://github.com/mahmoudosman2611">
@@ -105,10 +107,18 @@ export default function PortfolioFuturistic() {
             </div>
           </div>
 
-          {/* Right: Avatar with blue neon ring */}
+          {/* Right: Avatar with rotating irregular shape */}
           <div className="order-1 lg:order-2 flex justify-center animate__animated animate__backInRight">
             <div className="relative">
+              {/* Rotating irregular blob */}
+              <div className="absolute -inset-10">
+                <div className="w-full h-full rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-gradient-to-tr from-primary-500/40 via-primary-400/30 to-transparent blur-xl animate-spin-slow" />
+              </div>
+
+              {/* Glow background */}
               <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-primary-500 via-primary-400 to-transparent opacity-30 md:opacity-50 blur-2xl" />
+
+              {/* Image */}
               <img
                 src={mahmoudosmanImg}
                 alt="Mahmoud Osman"
@@ -116,14 +126,15 @@ export default function PortfolioFuturistic() {
                 loading="eager"
                 sizes="(min-width:1024px) 520px, (min-width:768px) 320px, 160px"
               />
-              {/* orbiting dot */}
+
+              {/* Orbiting dot */}
               <span className="absolute -right-2 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-primary-400 shadow-[0_0_18px_rgba(96,165,250,0.9)] animate-ping motion-reduce:hidden" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Local styles (blue aurora + stars) */}
+      {/* Local styles */}
       <style>{`
         @keyframes float {
           0%,100% { transform: translateY(0) translateX(0); }
@@ -151,8 +162,15 @@ export default function PortfolioFuturistic() {
           background-repeat: no-repeat;
           background-size: cover;
         }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
         @media (prefers-reduced-motion: reduce) {
-          .aurora, .aurora-2 { animation: none !important; }
+          .aurora, .aurora-2, .animate-spin-slow { animation: none !important; }
         }
       `}</style>
     </section>
