@@ -17,8 +17,8 @@ import SmartLogin from "../../assets/imgs/SmartLogin.png";
 import QuotesGenerator from "../../assets/imgs/QuotesGenerator.png";
 
 export default function Projects() {
-    useEffect(() => {
-    AOS.init({ duration: 350, once: false,offset: 100,  }); // once:false عشان الإيفكت يتكرر كل مرة
+  useEffect(() => {
+    AOS.init({ duration: 300, once: false, offset: 100 }); 
   }, []);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -196,8 +196,8 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <div
               key={project.title}
-               data-aos="fade-up"
-      data-aos-delay={index * 100} 
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               className="relative  rounded-2xl border border-white/10 bg-white/5 p-1 backdrop-blur-md
                           shadow-[0_0_24px_rgba(59,130,246,0.08)]
                           transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_34px_rgba(59,130,246,0.18)]"

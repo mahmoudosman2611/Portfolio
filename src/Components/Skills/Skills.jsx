@@ -11,7 +11,7 @@ import {
 
 export default function Skills() {
   useEffect(() => {
-    AOS.init({ duration: 350, once: false,offset: 100,  });
+    AOS.init({ duration: 300, once: false,offset: 100,  });
   }, []);
 
   const skills = [

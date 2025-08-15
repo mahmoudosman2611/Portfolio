@@ -1,4 +1,5 @@
 
+import AboutMe from "../../Components/AboutMe/AboutMe";
 import PageMetaData from "../../Components/PageMetaData/PageMetaData";
 import Portfolio from "../../Components/Portfolio/Portfolio";
 import Projects from "../../Components/Projects/Projects";
@@ -14,6 +15,7 @@ export default function Home() {
         author="Mahmoud Osman"
       />
       <Portfolio />
+      <AboutMe/>
       <Skills/>
       <Projects/>
 
