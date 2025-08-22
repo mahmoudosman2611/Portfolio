@@ -61,18 +61,15 @@ export default function Navbar() {
 
             <ul className="hidden lg:flex items-center gap-15 text-white">
               <li>
-                <NavLink
-                  to={`/`}
-                  className={({ isActive }) =>
-                    `${
-                      isActive ? "text-primary-300" : ""
-                    } flex flex-col items-center gap-1 hover:text-primary-300 transition-colors`
-                  }
+                <a
+                  href="#home"
+                  className="flex flex-col items-center gap-1 hover:text-primary-300 transition-colors"
                 >
-                  <FontAwesomeIcon icon={faHouse} className="" />
+                  <FontAwesomeIcon icon={faHouse} />
                   <span className="text-sm">Home</span>
-                </NavLink>
+                </a>
               </li>
+
               <li>
                 <a
                   href="#about"
@@ -157,30 +154,24 @@ export default function Navbar() {
 
               <h2 className="text-xl font-bold text-primary-300">Main Menu</h2>
               <ul className="mt-3 space-y-2">
-                <li>
-                  <NavLink
-                    to={`/`}
-                    onClick={toggleMenu}
-                    className={({ isActive }) =>
-                      `${
-                        isActive ? "text-primary-300 bg-white/10" : "text-white"
-                      } flex gap-2 px-2 py-3 rounded hover:text-primary-300`
-                    }
-                  >
-                    <FontAwesomeIcon icon={faHouse} className="text-xl" />
-                    <span className="text-sm">Home</span>
-                  </NavLink>
-                </li>
+<li>
+  <a
+    href="#home"
+    onClick={toggleMenu}
+    className="flex gap-2 px-2 py-3 text-white rounded hover:text-primary-300"
+  >
+    <FontAwesomeIcon icon={faHouse} className="text-xl" />
+    <span className="text-sm">Home</span>
+  </a>
+</li>
+
                 <li>
                   <a
                     href="#about"
                     onClick={toggleMenu}
                     className="flex gap-2 px-2 py-3 text-white rounded hover:text-primary-300"
                   >
-                    <FontAwesomeIcon
-                      icon={faUserCircle}
-                      className="text-2xl"
-                    />
+                    <FontAwesomeIcon icon={faUserCircle} className="text-2xl" />
                     <span className="text-sm">About Me</span>
                   </a>
                 </li>
