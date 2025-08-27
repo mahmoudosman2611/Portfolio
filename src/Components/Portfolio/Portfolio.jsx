@@ -118,8 +118,8 @@ export default function Portfolio() {
           <div className="order-1 lg:order-2 flex justify-center animate__animated animate__backInRight">
             <div className="relative">
               {/* Rotating irregular blob */}
-              <div className="absolute -inset-10">
-                <div className="w-full h-full rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-gradient-to-tr from-primary-500/40 via-primary-400/30 to-transparent blur-xl animate-spin-slow" />
+              <div className="absolute inset-10">
+                <div className="w-full h-full rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-gradient-to-tr from-primary-500/70 via-primary-400/30 to-transparent blur-xl animate-spin-slow" />
               </div>
 
               {/* Glow background */}

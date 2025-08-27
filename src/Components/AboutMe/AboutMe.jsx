@@ -53,10 +53,7 @@ export default function AboutMe() {
             <span className="h-2 w-2 rounded-full bg-primary-400 shadow-[0_0_10px_rgba(96,165,250,0.9)]" />
             ABOUT ME
           </span>
-          <h2 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">
-            I&apos;m <span className="text-primary-300">Mahmoud Osman</span> —
-            Frontend Developer
-          </h2>
+
           <p className="mt-4 text-white/80">
             I&apos;m a Civil Engineer turned Frontend Developer. My curiosity
             for technology and problem‑solving led me to study programming and
@@ -66,7 +63,7 @@ export default function AboutMe() {
           {/* New line for certification */}
           <div className="mt-3 flex items-center gap-2 text-primary-200 font-medium">
             <div className="mt-3 flex items-center gap-3 text-primary-200 font-medium">
-              <div className="h-2 w-2  rounded-full bg-primary-400 shadow-[0_0_8px_rgba(96,165,250,0.9)]" />
+              <div className="h-2 w-2 shrink-0  rounded-full bg-primary-400 shadow-[0_0_8px_rgba(96,165,250,0.9)]" />
 
               <p>
                 Certified Diploma in Frontend Development from Route IT Training

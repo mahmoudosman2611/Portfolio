@@ -138,11 +138,11 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
                   <FontAwesomeIcon
                     icon={faCode}
-                    className=" fa-beat text-primary-600 text-xs md:text-xs"
+                    className=" fa-beat text-primary-600 text-base"
                   />
-                  <h1 className="font-bold text-xs md:text-xs hover:text-primary-300 transition-colors">
+                  <h1 className="font-bold text-base hover:text-primary-300 transition-colors">
                     <Link to={`/`} className="tracking-wide">
-                      Mahmoud Osman
+                      Mahmoud
                     </Link>
                     <span className="ml-2 w-1 h-1 rounded-full bg-primary-600"></span>
                   </h1>
@@ -152,7 +152,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <h2 className="text-xl font-bold text-primary-300">Main Menu</h2>
+              {/* <h2 className="text-xl font-bold text-primary-300">Menu</h2> */}
               <ul className="mt-3 space-y-2">
 <li>
   <a
